@@ -97,7 +97,7 @@ svg.append("text")
 
 
 
-d3.csv("data/timeline.csv", function(error, data){
+d3.csv("https://dl.dropboxusercontent.com/u/18958141/d3res_ref/timeline.csv", function(error, data){
 
 	data.forEach(function(d){
 		d.beg = parseDate(d.beg)
