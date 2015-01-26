@@ -38,11 +38,10 @@ var x = d3.time.scale()
 var bumper = 12;
 
 var y = d3.scale.ordinal()
-	.domain(["undergrad","growth marketing","awareness events","overseas", "giving"])
+	.domain(["growth marketing", "awareness", "fundraising", "undergrad"])
 	.range([10,
-		height/2-1.5*bumper,
 		height/2-0.5*bumper,
-		height/2+0.5*bumper,
+		height/2-1*bumper,
 		height-10]);
 
 var axisPoints = [
@@ -58,42 +57,23 @@ var axisPoints = [
 var textBumper = 5,
 	lineBumper = 25;
 
-svg.append("line")
-	.attr("x1",-margin.left)
-	.attr("x2",width)
-	.attr("y1",y("growth marketing") - lineBumper)
-	.attr("y2",y("growth marketing") - lineBumper)
-	.attr("stroke", "#FDF6E9")
-	.attr("stroke-width", 1)
-
-svg.append("line")
-	.attr("x1",-margin.left)
-	.attr("x2",width)
-	.attr("y1",y("overseas") + lineBumper)
-	.attr("y2",y("overseas") + lineBumper)
-	.attr("stroke", "#FDF6E9")
-	.attr("stroke-width", 1)
-
 svg.append("text")
 	.attr("class","categoryLabels")
-	.text("school")
+	.text("work")
 	.attr("x",-margin.left)
 	.attr("y", 10+textBumper)
 
 svg.append("text")
 	.attr("class","categoryLabels")
-	.text("work")
+	.text("causes")
 	.attr("x",-margin.left)
 	.attr("y", height/2+textBumper)
 
 svg.append("text")
 	.attr("class","categoryLabels")
-	.text("causes")
+	.text("school")
 	.attr("x",-margin.left)
 	.attr("y", height-10+textBumper)
-
-
-
 
 
 d3.csv("https://dl.dropboxusercontent.com/u/18958141/d3res_ref/timeline.csv", function(error, data){
@@ -129,29 +109,28 @@ d3.csv("https://dl.dropboxusercontent.com/u/18958141/d3res_ref/timeline.csv", fu
 
 	svg.append("text")
 		.attr("class","axisLabels")
-		.text("UNDERGRAD")
-		.attr("x", x(parseDate("01-Sep-05")))
-		.attr("y", y("undergrad") - 3)
-
-	svg.append("text")
-		.attr("class","axisLabels")
-		.text("AWARENESS EVENTS")
-		.attr("x", x(parseDate("01-Jul-07")))
-		.attr("y", y("awareness events") - 3)
-		
-	svg.append("text")
-		.attr("class","axisLabels")
 		.text("GROWTH MARKETING")
 		.attr("x", x(parseDate("01-Apr-10")))
 		.attr("y", y("growth marketing") - 3)
-	
+
 	svg.append("text")
 		.attr("class","axisLabels")
-		.text("SKI BUMMING")
-		.attr("x", x(parseDate("01-Nov-09")))
-		.attr("y", y("play") - 3)
+		.text("AWARENESS")
+		.attr("x", x(parseDate("01-Jul-07")))
+		.attr("y", y("awareness") - 3)
 
-
+	svg.append("text")
+		.attr("class","axisLabels")
+		.text("FUNDRAISING")
+		.attr("x", x(parseDate("01-Apr-10")))
+		.attr("y", y("fundraising") - 3)
+		
+	svg.append("text")
+		.attr("class","axisLabels")
+		.text("UNDERGRAD")
+		.attr("x", x(parseDate("01-Sep-05")))
+		.attr("y", y("undergrad") - 3)
+	
 	var lines = svg.selectAll(".rect")
 		.data(data)
 	  .enter().append("rect")
