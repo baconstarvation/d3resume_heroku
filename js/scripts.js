@@ -47,11 +47,7 @@ var y = d3.scale.ordinal()
 		height-10]);
 
 var axisPoints = [
-	{year:"2005", date:"1-Jan-05"},
-	{year:"06", date:"1-Jan-06"},
-	{year:"07", date:"1-Jan-07"},
-	{year:"08", date:"1-Jan-08"},
-	{year:"09", date:"1-Jan-09"},
+	{year:"2009", date:"1-Jan-09"},
 	{year:"10", date:"1-Jan-10"},
 	{year:"11", date:"1-Jan-11"},
 	{year:"12", date:"1-Jan-12"},
