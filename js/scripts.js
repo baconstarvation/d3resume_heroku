@@ -38,7 +38,7 @@ var x = d3.time.scale()
 var bumper = 12;
 
 var y = d3.scale.ordinal()
-	.domain(["school","engineering","writing","wandg","graphics","play"])
+	.domain(["undergrad","growth marketing","giving","awareness events","overseas"])
 	.range([10,
 		height/2-1.5*bumper,
 		height/2-0.5*bumper,
@@ -89,12 +89,12 @@ svg.append("text")
 
 svg.append("text")
 	.attr("class","categoryLabels")
-	.text("play")
+	.text("causes")
 	.attr("x",-margin.left)
 	.attr("y", height-10+textBumper)
 
 
-
+http://ritchiesking.com/resume/
 
 
 d3.csv("https://dl.dropboxusercontent.com/u/18958141/d3res_ref/timeline.csv", function(error, data){
