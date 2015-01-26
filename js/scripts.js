@@ -38,12 +38,11 @@ var x = d3.time.scale()
 var bumper = 12;
 
 var y = d3.scale.ordinal()
-	.domain(["undergrad","growth marketing","giving","awareness events","overseas"])
+	.domain(["undergrad","growth marketing","awareness events","overseas", "giving"])
 	.range([10,
 		height/2-1.5*bumper,
 		height/2-0.5*bumper,
 		height/2+0.5*bumper,
-		height/2+1.5*bumper,
 		height-10]);
 
 var axisPoints = [
@@ -53,7 +52,7 @@ var axisPoints = [
 	{year:"12", date:"1-Jan-12"},
 	{year:"13", date:"1-Jan-13"},
 	{year:"14", date:"1-Jan-14"},
-	{year:"15", date:"1-Jan-15"}
+	{year:"15+", date:"1-Jan-15"}
 ]
 
 var textBumper = 5,
@@ -64,7 +63,7 @@ svg.append("line")
 	.attr("x2",width)
 	.attr("y1",y("growth marketing") - lineBumper)
 	.attr("y2",y("growth marketing") - lineBumper)
-	.attr("stroke", "#B3B3B3")
+	.attr("stroke", "#FDF6E9")
 	.attr("stroke-width", 1)
 
 svg.append("line")
@@ -72,7 +71,7 @@ svg.append("line")
 	.attr("x2",width)
 	.attr("y1",y("overseas") + lineBumper)
 	.attr("y2",y("overseas") + lineBumper)
-	.attr("stroke", "#B3B3B3")
+	.attr("stroke", "#FDF6E9")
 	.attr("stroke-width", 1)
 
 svg.append("text")
@@ -130,33 +129,21 @@ d3.csv("https://dl.dropboxusercontent.com/u/18958141/d3res_ref/timeline.csv", fu
 
 	svg.append("text")
 		.attr("class","axisLabels")
+		.text("UNDERGRAD")
+		.attr("x", x(parseDate("01-Sep-05")))
+		.attr("y", y("undergrad") - 3)
+
+	svg.append("text")
+		.attr("class","axisLabels")
 		.text("AWARENESS EVENTS")
 		.attr("x", x(parseDate("01-Jul-07")))
 		.attr("y", y("awareness events") - 3)
-	
-	svg.append("text")
-		.attr("class","axisLabels")
-		.text("UNDERGRAD")
-		.attr("x", x(parseDate("01-Sep-05")))
-		.attr("y", y("school") - 3)
 		
 	svg.append("text")
 		.attr("class","axisLabels")
 		.text("GROWTH MARKETING")
 		.attr("x", x(parseDate("01-Apr-10")))
 		.attr("y", y("growth marketing") - 3)
-		
-	svg.append("text")
-		.attr("class","axisLabels")
-		.text("GRAPHICS")
-		.attr("x", x(parseDate("01-Dec-11")))
-		.attr("y", y("graphics") + 17)
-
-	svg.append("text")
-		.attr("class","axisLabels")
-		.text("BOTH")
-		.attr("x", x(parseDate("01-Aug-12")))
-		.attr("y", y("wandg") - 3)
 	
 	svg.append("text")
 		.attr("class","axisLabels")
