@@ -94,7 +94,7 @@ svg.append("text")
 	.attr("y", height-10+textBumper)
 
 
-http://ritchiesking.com/resume/
+
 
 
 d3.csv("https://dl.dropboxusercontent.com/u/18958141/d3res_ref/timeline.csv", function(error, data){
@@ -130,9 +130,9 @@ d3.csv("https://dl.dropboxusercontent.com/u/18958141/d3res_ref/timeline.csv", fu
 
 	svg.append("text")
 		.attr("class","axisLabels")
-		.text("ENGINEERING")
+		.text("AWARENESS EVENTS")
 		.attr("x", x(parseDate("01-Jul-07")))
-		.attr("y", y("engineering") - 3)
+		.attr("y", y("awareness events") - 3)
 	
 	svg.append("text")
 		.attr("class","axisLabels")
