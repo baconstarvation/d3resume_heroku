@@ -128,7 +128,7 @@ d3.csv("https://dl.dropboxusercontent.com/u/18958141/d3res_ref/timeline.csv", fu
 	svg.append("text")
 		.attr("class","axisLabels")
 		.text("UNDERGRAD")
-		.attr("x", x(parseDate("01-Sep-05")))
+		.attr("x", x(parseDate("01-Dec-08")))
 		.attr("y", y("undergrad") - 3)
 	
 	var lines = svg.selectAll(".rect")
