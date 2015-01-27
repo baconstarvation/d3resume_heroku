@@ -6,7 +6,7 @@ var detail = $("#detail");
 	detailWidth = detail.width()
 	detailHeight = detail.height()
 
-var selected = 4;
+var selected = 1;
 
 var margin = {top: 25, right: 50, bottom: 10, left: 100};
     width = divWidth - margin.left - margin.right,
@@ -38,10 +38,10 @@ var x = d3.time.scale()
 var bumper = 12;
 
 var y = d3.scale.ordinal()
-	.domain(["growth marketing", "awareness", "fundraising", "undergrad"])
+	.domain(["growth marketing", "fundraising", "awareness", "undergrad"])
 	.range([10,
-		height/2-0.5*bumper,
-		height/2-1*bumper,
+		height/2-0.25*bumper,
+		height/2+0.5*bumper,
 		height-10]);
 
 var axisPoints = [
@@ -116,8 +116,8 @@ d3.csv("https://dl.dropboxusercontent.com/u/18958141/d3res_ref/timeline.csv", fu
 	svg.append("text")
 		.attr("class","axisLabels")
 		.text("AWARENESS")
-		.attr("x", x(parseDate("01-Jul-07")))
-		.attr("y", y("awareness") - 3)
+		.attr("x", x(parseDate("01-Mar-09")))
+		.attr("y", y("awareness") + 17)
 
 	svg.append("text")
 		.attr("class","axisLabels")
